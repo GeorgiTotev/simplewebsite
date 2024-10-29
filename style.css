@@ -23,13 +23,13 @@ p {
 
 a,
 .btn {
-  transition: all 300ms ease;
+  transition: all 500ms ease-in-out;
 }
 
 /* DESKTOP NAV */
 
 nav,
-.nav-links {
+.header-navigation {
   display: flex;
 }
 
@@ -39,10 +39,10 @@ nav {
   height: 17vh;
 }
 
-.nav-links {
+.header-navigation {
   gap: 2rem;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 a {
@@ -58,11 +58,11 @@ a:hover {
   text-decoration-color: rgb(181, 181, 181);
 }
 
-.logo {
-  font-size: 2rem;
+.header-name {
+  font-size: 2.5rem;
 }
 
-.logo:hover {
+.header-name:hover {
   cursor: default;
 }
 
@@ -101,7 +101,7 @@ a:hover {
   width: fit-content;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3 ease;
 }
 
 .menu-links a {
@@ -136,15 +136,10 @@ a:hover {
 
 .hamburger-icon span:first-child {
   transform: none;
-}
-
-.hamburger-icon span:first-child {
   opacity: 1;
-}
-
-.hamburger-icon span:first-child {
   transform: none;
 }
+
 
 /* SECTIONS */
 
@@ -157,42 +152,51 @@ section {
 }
 
 .section-container {
+  height: 20vh;
   display: flex;
 }
 
 /* PROFILE SECTION */
 
 #profile {
+  padding-right: 5%;
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  height: 80vh;
+  gap: 13rem;
+  height: 20vh;
 }
 
-.section__pic-container {
+.profile-pic{
+  position: relative;
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-pic-container {
+  padding-top: 5%;
   display: flex;
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 500px;
   margin: auto 0;
 }
 
-.section__text {
-  align-self: center;
+.hello{
+  padding-top: 40%;
+  font-size: 2rem;
   text-align: center;
+  color: rgb(70, 70, 70);
 }
 
-.section__text p {
-  font-weight: 600;
-}
-
-.section__text__p1 {
+.hello2{
+  font-size: 2rem;
   text-align: center;
+  color: rgb(70, 70, 70);
 }
 
-.section__text__p2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-}
+
+
 
 .title {
   font-size: 3rem;
@@ -210,12 +214,18 @@ section {
 
 .icon {
   cursor: pointer;
-  height: 2rem;
+  height: 2.5rem;
+}
+
+.icon2 {
+  cursor: pointer;
+  height: 3.5rem;
 }
 
 /* BUTTONS */
 
 .btn-container {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -223,37 +233,31 @@ section {
 
 .btn {
   font-weight: 600;
-  transition: all 300ms ease;
+  transition: all 500ms ease;
   padding: 1rem;
-  width: 8rem;
+  width: 10rem;
   border-radius: 2rem;
 }
 
-.btn-color-1,
-.btn-color-2 {
+.btn-color {
+  font-size: 1.1rem;
   border: rgb(53, 53, 53) 0.1rem solid;
 }
 
-.btn-color-1:hover,
-.btn-color-2:hover {
+.btn-color:hover {
   cursor: pointer;
 }
 
-.btn-color-1,
-.btn-color-2:hover {
+.btn-color:hover {
   background: rgb(53, 53, 53);
   color: white;
 }
 
-.btn-color-1:hover {
-  background: rgb(0, 0, 0);
-}
-
-.btn-color-2 {
+.btn-color {
   background: none;
 }
 
-.btn-color-2:hover {
+.btn-color:hover {
   border: rgb(255, 255, 255) 0.1rem solid;
 }
 
@@ -264,6 +268,7 @@ section {
 /* ABOUT SECTION */
 
 #about {
+  margin-top: 15%;
   position: relative;
 }
 
@@ -284,6 +289,10 @@ section {
 }
 
 .about-pic {
+  margin-top: -15%;
+  height: 500px;
+  width: 500px;
+  object-fit: cover;
   border-radius: 2rem;
 }
 
@@ -291,6 +300,22 @@ section {
   position: absolute;
   right: -5rem;
   bottom: 2.5rem;
+}
+
+.arrow1{
+  position: absolute;
+  right: 5rem;
+  bottom: 5rem;
+}
+
+.arrow2{
+  position: absolute;
+  right: 5rem;
+  bottom: -227rem;
+}
+
+.p_experience{
+  font-size: 20px;
 }
 
 .details-container {
@@ -308,7 +333,7 @@ section {
   height: 80%;
 }
 
-.section__pic-container {
+.profile-pic-container {
   height: 400px;
   width: 400px;
   margin: auto 0;
@@ -433,3 +458,114 @@ footer {
 footer p {
   text-align: center;
 }
+
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #header-navigation {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+  #profile,
+  .section-container {
+    display: block;
+  }
+  .arrow {
+    display: none;
+  }
+  .arrow1 {
+    display: none;
+  }
+  .arrow2 {
+    display: none;
+  }
+  section,
+  .section-container {
+    height: fit-content;
+  }
+  section {
+    margin: 0 5%;
+  }
+  .section__pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+  .about-containers {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contact,
+  footer {
+    height: 40vh;
+  }
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+  article {
+    font-size: 1rem;
+  }
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+    flex-wrap: wrap;
+  }
+  .contact-info-container {
+    margin: 0;
+  }
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem;
+  }
+  .experience-sub-title {
+    font-size: 1.25rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .section__pic-container {
+    width: auto;
+    height: 46vw;
+    justify-content: center;
+  }
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .text-container {
+    text-align: justify;
+  }
+}
+
